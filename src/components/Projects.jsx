@@ -9,23 +9,22 @@ import MyImage from "../assets/Profile.svg";
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center cards horizontally */
+  gap: 2rem; /* Space between cards */
+  padding: 2rem; /* Add padding around the container */
   background-color: transparent;
-  width: 100%;
-  perspective: 1500px; /* Perspective to enhance 3D effect */
 `;
 
 const MainCard = styled(Card)`
-  background-color: #000;
-  color: #fff;
-  width: 100%;
-  max-width: 1500px;
-  border: 1px solid #444;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+background-color: #000;
+color: #fff;
+width: 100%;
+max-width: 1500px; /* Adjust width as needed */
+border: 1px solid #444;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin-bottom: 2rem; /* Space between cards */
+
 `;
 
 const SectionTitle = styled.h2`
@@ -61,6 +60,9 @@ const AnimatedProjectCard = styled(motion.div)`
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d; /* Required for 3D effects */
+  @media (max-width: 768px) {
+  max-width:330px;
+}
 
   &:hover {
     transform: rotateY(15deg) rotateX(10deg) translateZ(20px); /* 3D rotation effect */
@@ -80,7 +82,11 @@ const ProjectCardTitle = styled(CardTitle)`
 `;
 
 const ProjectCardContent = styled(CardContent)`
-  text-align: left;
+  text-align:  justify;
+  word-spacing: -1.5px;
+  @media (max-width: 768px) {
+      word-spacing: -2.5px; // Adjust word spacing to reduce gaps
+  }
 `;
 
 const BadgeContainer = styled.div`
@@ -103,6 +109,9 @@ const VisitButton = styled.a`
   margin-top: 1rem;
   border: 1px solid white;
   text-align: center;
+  @media (max-width: 768px) {
+      margin-inline: 0;
+  }
   
   &:hover {
     background-color: white;
@@ -111,6 +120,15 @@ const VisitButton = styled.a`
   
   svg {
     margin-left: 0.5rem; /* Space between text and icon */
+  }
+`;
+
+const JustifiedParagraph = styled.p`
+  text-align: justify;
+  hyphens: auto; // Enable hyphenation to break words when needed
+  line-height: 1.5; // Adjust line height for better readability
+  @media (max-width: 768px) {
+      word-spacing: -2.5px; // Adjust word spacing to reduce gaps
   }
 `;
 
@@ -176,9 +194,9 @@ const Project = () => {
           </CardHeader>
           <CardContent>
             <SectionTitle>My Projects</SectionTitle>
-            <Content>
+            <JustifiedParagraph>
               I love to Build Cool Projects. Here, you'll find a curated collection of my creative endeavors and technical projects. Each piece represents a journey of innovation, problem-solving, and continuous learning. Feel free to explore this showcase of my passion and expertise in action.
-            </Content>
+            </JustifiedParagraph>
           </CardContent>
         </MainCard>
       </motion.div>

@@ -28,11 +28,12 @@ const MainCard = styled(Card)`
   max-width: 700px;
   border: 1px solid #444;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 1rem;
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    padding: 1rem;
+    padding: 0.1rem;
+    max-width: 110%;
   }
 `;
 
@@ -41,12 +42,20 @@ const SectionTitle = styled.h2`
   margin-bottom: 1rem;
   color: #fff;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const FormLabel = styled.label`
   color: #fff;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const FormGroup = styled.div`
@@ -112,11 +121,32 @@ const Contact = () => {
           theme: "dark",
           transition: Bounce,
         });
+        form.reset();
       } else {
-        toast.error('Form submission failed. Please try again.');
+        toast.error('Check your internet connection and try again', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       }
     } catch (error) {
-      toast.error('An error occurred. Please try again.');
+      toast.error('An error occurred. Please try again.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
       console.error('An error occurred:', error);
     } finally {
       setIsSubmitting(false);
@@ -139,16 +169,17 @@ const Contact = () => {
             <SectionTitle>Send me a mail</SectionTitle>
             <p>
               I would love to hear from you! Whether you have a question about my work, a project proposal, or just want to say hi, feel free to reach out.
-            </p>
-            <form onSubmit={handleSubmit} action='https://api.web3forms.com/submit'>
-            <input type="hidden" name="access_key" value="78ad7c90-e7c5-4991-b446-a61c5ada20b2" />
-            <FormGroup>
+            </p> <br/>
+            <form onSubmit={handleSubmit}>
+              <input type="hidden" name="access_key" value="78ad7c90-e7c5-4991-b446-a61c5ada20b2" /> 
+              <FormGroup>
                 <FormLabel htmlFor="name">Name</FormLabel>
                 <Input
                   type="text"
                   id="name"
                   name="name"
                   placeholder="Enter your name"
+                  style={{ color: 'black' }}
                   required
                 />
               </FormGroup>
@@ -158,6 +189,7 @@ const Contact = () => {
                   type="email" 
                   id="email"
                   name="email"
+                  style={{ color: 'black' }}
                   placeholder="Enter your email"
                   required
                 />
@@ -167,14 +199,14 @@ const Contact = () => {
                 <Textarea
                   id="message"
                   name="message"
+                  style={{ color: 'black' }}
                   placeholder="Your message here..."
                   required
                 />
               </FormGroup>
-              <div className="h-captcha" data-captcha="true"></div>
+              <div className="h-captcha" style={{ display: 'flex', justifyContent: 'center' }} data-captcha="true"></div>
               <Button type="submit" disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : 'Submit'}</Button>
             </form>
-            
             <ContactDetails>
               <p>Email: elanchandru2@gmail.com</p>
               <p>Phone: +91-877-862-2935</p>

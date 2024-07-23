@@ -73,6 +73,15 @@ const ListItem = styled.li`
   }
 `;
 
+const JustifiedParagraph = styled.p`
+  text-align: justify;
+  hyphens: auto; // Enable hyphenation to break words when needed
+  line-height: 1.5; // Adjust line height for better readability
+  @media (max-width: 768px) {
+      word-spacing: 1.5px; // Adjust word spacing to reduce gaps
+  }
+`;
+
 const DevCardContainer = styled.div`
   flex: 1; /* Take up remaining space */
   display: flex;
@@ -106,13 +115,13 @@ const About = () => {
             <CardTitle>
               Full Stack Web Developer
             </CardTitle>
-            <p>
+            <JustifiedParagraph style={{ textAlign: 'justify', marginBottom: '1rem', marginTop: '1rem', }}>
               Hello, I'm Chandru, a dedicated developer specializing in React, PHP, and SQL, with a strong foundation in UI/UX design using Figma. I thrive on crafting intuitive interfaces and scalable solutions that elevate user experiences. Whether it's architecting databases, optimizing backend processes, or refining front-end interactions, I am passionate about every aspect of the development lifecycle.
-            </p>
+            </JustifiedParagraph>
             <br />
-            <p>
+            <JustifiedParagraph style={{ textAlign: 'justify', marginBottom: '1rem', marginTop: '1rem', }}>
               My journey in software engineering has equipped me with the skills to tackle intricate problems and innovate with technology. From conceptualization to deployment, I take pride in transforming ideas into robust, user-centric applications. Let's collaborate and create something exceptional together!
-            </p>
+            </JustifiedParagraph>
           </CardContent>
         </StyledCard>
       </motion.div>

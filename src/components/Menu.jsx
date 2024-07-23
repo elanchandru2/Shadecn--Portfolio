@@ -1,56 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menubar, MenubarMenu, MenubarTrigger } from "../components/ui/menubar";
-import {
-  NavigationMenuLink,
-} from "../components/ui/navigation-menu";
+import { FaHome, FaInfoCircle, FaTools, FaProjectDiagram, FaGraduationCap, FaEnvelope } from 'react-icons/fa';
 
 const Menu = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const menuItems = [
+    { to: "/", label: "Home", icon: <FaHome /> },
+    { to: "/about", label: "About", icon: <FaInfoCircle /> },
+    { to: "/skills", label: "Skills", icon: <FaTools /> },
+    { to: "/projects", label: "Projects", icon: <FaProjectDiagram /> },
+    { to: "/education", label: "Education", icon: <FaGraduationCap /> },
+    { to: "/contact", label: "Contact", icon: <FaEnvelope /> },
+  ];
+
   return (
     <div style={styles.container}>
       <Menubar style={styles.menubar}>
-        <MenubarMenu key="home">
-          <MenubarTrigger>
-            <Link to="/" style={navigationMenuTriggerStyle()}>
-              Home
-            </Link>
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu key="about">
-          <MenubarTrigger>
-            <Link to="/about" style={navigationMenuTriggerStyle()}>
-              About
-            </Link>
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu key="skills">
-          <MenubarTrigger>
-            <Link to="/skills" style={navigationMenuTriggerStyle()}>
-              Skills
-            </Link>
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu key="projects">
-          <MenubarTrigger>
-            <Link to="/projects" style={navigationMenuTriggerStyle()}>
-              Projects
-            </Link>
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu key="education">
-          <MenubarTrigger>
-            <Link to="/education" style={navigationMenuTriggerStyle()}>
-              Education
-            </Link>
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu key="contact">
-          <MenubarTrigger>
-            <Link to="/contact" style={navigationMenuTriggerStyle()}>
-              Contact
-            </Link>
-          </MenubarTrigger>
-        </MenubarMenu>
+        {menuItems.map((item) => (
+          <MenubarMenu key={item.label.toLowerCase()}>
+            <MenubarTrigger>
+              <Link to={item.to} style={navigationMenuTriggerStyle()}>
+                {isMobile ? item.icon : item.label}
+              </Link>
+            </MenubarTrigger>
+          </MenubarMenu>
+        ))}
       </Menubar>
     </div>
   );
@@ -81,3 +68,4 @@ const navigationMenuTriggerStyle = () => {
 };
 
 export default Menu;
+ 

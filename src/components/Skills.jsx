@@ -12,28 +12,21 @@ import MyImage from "../assets/Profile.svg";
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center cards horizontally */
+  gap: 2rem; /* Space between cards */
+  padding: 2rem; /* Add padding around the container */
   background-color: transparent;
-  width: 100%;
 `;
 
 const StyledCard = styled(Card)`
   background-color: #000;
   color: #fff;
   width: 100%;
-  max-width: 90%;
+  max-width: 1500px; /* Adjust width as needed */
   border: 1px solid #444;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin-bottom: 2rem;
-  margin-left: 5vw;
-
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
+  margin-bottom: 2rem; /* Space between cards */
 `;
 
 const Section = styled.div`
@@ -69,6 +62,15 @@ const IconWrapper = styled.div`
   margin-bottom: 1rem;
 `;
 
+const JustifiedParagraph = styled.p`
+  text-align: justify;
+  hyphens: auto; // Enable hyphenation to break words when needed
+  line-height: 1.5; // Adjust line height for better readability
+  @media (max-width: 768px) {
+      word-spacing: -2.5px; // Adjust word spacing to reduce gaps
+  }
+`;
+
 const Skills = () => {
   return (
     <Container>
@@ -91,8 +93,8 @@ const Skills = () => {
           </CardHeader>
           <CardContent>
             <CardTitle>My Technical Experience/Skills</CardTitle>
-            <p>
-            Currently, I am a fresher with a solid understanding of HTML5, CSS3, JavaScript (JS), TypeScript (TS), and React, including responsive design principles. I specialize in building web applications and sites using JavaScript, TypeScript, React, Next.js, and Node. My skills encompass crafting semantic and accessible HTML structures, implementing modern CSS techniques like Flexbox and Grid, and utilizing ES6+ features in JavaScript for dynamic functionality. With proficiency in TypeScript, I ensure type safety and robust coding practices. Additionally, I am experienced in using React hooks, context API, and state management with Redux, while leveraging Next.js for server-side rendering and optimized performance. My focus on responsive design ensures that my applications are accessible and visually appealing across various devices.            </p>
+            <JustifiedParagraph>
+            Currently, I am a fresher with a solid understanding of HTML5, CSS3, JavaScript (JS), TypeScript (TS), and React, including responsive design principles. I specialize in building web applications and sites using JavaScript, TypeScript, React, Next.js, and Node. My skills encompass crafting semantic and accessible HTML structures, implementing modern CSS techniques like Flexbox and Grid, and utilizing ES6+ features in JavaScript for dynamic functionality. With proficiency in TypeScript, I ensure type safety and robust coding practices. Additionally, I am experienced in using React hooks, context API, and state management with Redux, while leveraging Next.js for server-side rendering and optimized performance. My focus on responsive design ensures that my applications are accessible and visually appealing across various devices.            </JustifiedParagraph>
           </CardContent>
         </StyledCard>
       </motion.div>

@@ -28,6 +28,12 @@ const MainCard = styled(Card)`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   box-sizing: border-box;
+  @media (max-width: 768px) {
+  max-width: 330px;
+    padding: 0.5rem;
+    text-align: justify;
+    word-spacing: -2.5px;
+}
 `;
 
 const SectionTitle = styled.h2`
@@ -46,13 +52,18 @@ const TimelineContainer = styled.div`
   width: 100%;  
   max-width: 1000px;
   height: 500px;
-  overflow-y: auto;
-  background-color: #000;
-  padding: 1rem;
+  overflow-y: scroll;
+  background-color: transparent;
+  padding: 0.1rem;
   border-radius: 8px;
-  border: 1px solid #444;
   margin: 0 auto;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    height: auto;
+      max-width: 1000px;
+
+  }
 
   /* Scrollbar styling */
   ::-webkit-scrollbar {
@@ -74,7 +85,7 @@ const TimelineContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 100%;
     height: auto;
   }
 `;
@@ -134,7 +145,6 @@ const Project = () => {
           </CardContent>
         </MainCard>
         <br />
-        <MainCard>
           <CardContent>
             <SectionTitle>Education Timeline</SectionTitle>
           </CardContent>
@@ -186,7 +196,6 @@ const Project = () => {
               </StyledTimelineElement>
             </VerticalTimeline>
           </TimelineContainer>
-        </MainCard>
       </motion.div>
     </Container>
   );
