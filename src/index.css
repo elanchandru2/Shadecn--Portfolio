@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define the keyframe animation */
+
+
+/* Apply the base styles */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  background-image: radial-gradient(white 5%, transparent 6%);
+  background-size: 20px 20px; /* Initial pattern size */
+}
+
+/* Add hover effect if needed */
+

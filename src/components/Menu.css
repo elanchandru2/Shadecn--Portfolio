@@ -1,0 +1,12 @@
+.navigation-link {
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    border: none;
+    transition: color 0.3s ease;
+  }
+  
+  .navigation-link:hover {
+    color: black;
+  }
+  
