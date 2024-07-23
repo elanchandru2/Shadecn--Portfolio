@@ -5,6 +5,7 @@ import { FaTelegramPlane, FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/f
 import styled from "styled-components";
 import MyImage from '../assets/Profile.svg'; // Update the path to your image
 import { motion } from "framer-motion"; // Import motion from framer-motion
+import Resume from "../assets/Resume_From_Chandru.pdf";
 
 const Container = styled(motion.div)`
   position: relative;
@@ -280,7 +281,9 @@ const Home = () => {
           <FaGithub />
         </IconButton>
       </IconContainer>
-      <DownloadButton
+      <DownloadButton 
+        as="a"
+        href={Resume}
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 1.5 }} // Faster animation
