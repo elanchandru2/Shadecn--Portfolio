@@ -17,6 +17,13 @@ const Menu = () => {
     };
   }, []);
 
+  const handleMenuClick = (event) => {
+    const link = event.currentTarget.getAttribute("href");
+    if (link) {
+      window.location.href = link; // Force reload by setting href directly
+    }
+  };
+
   const menuItems = [
     { to: "/", label: "Home", icon: <FaHome /> },
     { to: "/about", label: "About", icon: <FaInfoCircle /> },
@@ -32,7 +39,11 @@ const Menu = () => {
         {menuItems.map((item) => (
           <MenubarMenu key={item.label.toLowerCase()}>
             <MenubarTrigger>
-              <Link to={item.to} style={navigationMenuTriggerStyle()}>
+              <Link
+                to={item.to}
+                style={navigationMenuTriggerStyle()}
+                onClick={handleMenuClick}
+              >
                 {isMobile ? item.icon : item.label}
               </Link>
             </MenubarTrigger>
@@ -50,11 +61,11 @@ const styles = {
     color: "white",
     marginTop: "10px",
     alignItems: "center",
-    background: "transparent", // Ensure the container background is transparent
+    background: "transparent",
   },
 
   menubar: {
-    background: "transparent", // Ensure the Menubar background is transparent
+    background: "transparent",
   },
 };
 
@@ -62,10 +73,9 @@ const navigationMenuTriggerStyle = () => {
   return {
     textDecoration: 'none',
     color: 'inherit',
-    background: 'transparent', // Ensure the background is transparent
-    border: 'none', // Remove any border if applied
+    background: 'transparent',
+    border: 'none',
   };
 };
 
 export default Menu;
- 
