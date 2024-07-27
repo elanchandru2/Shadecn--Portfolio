@@ -203,7 +203,7 @@ const Contact = () => {
                   placeholder="Your message here..."
                   required
                 />
-              </FormGroup><div>Fill the Captcha</div>
+              </FormGroup>
               <div className="h-captcha" style={{ display: 'flex', justifyContent: 'center' }} data-captcha="true"></div>
               <Button type="submit" disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : 'Submit'}</Button>
             </form>
