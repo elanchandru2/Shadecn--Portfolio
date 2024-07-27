@@ -204,7 +204,7 @@ const Contact = () => {
                   required
                 />
               </FormGroup>
-              <div className="h-captcha" style={{ display: 'flex', justifyContent: 'center' }} data-captcha="true"></div>
+              <div className="h-captcha" style={{ display: 'flex', justifyContent: 'center' }} data-captcha="true" required></div>
               <Button type="submit" disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : 'Submit'}</Button>
             </form>
             <ContactDetails>
