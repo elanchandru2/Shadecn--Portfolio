@@ -19,6 +19,7 @@ const Container = styled.div`
 const MainCard = styled(Card)`
 background-color: #000;
 color: #fff;
+border-radius: 10px; 
 width: 100%;
 max-width: 1500px; /* Adjust width as needed */
 border: 1px solid #444;
@@ -45,12 +46,14 @@ const ProjectsContainer = styled.div`
   gap: 2rem;
   width: 100%;
   max-width: 1500px;
+  border-radius: 10px;
   justify-content: center; /* Centers the cards horizontally */
 `;
 
 const AnimatedProjectCard = styled(motion.div)`
   background-color: black;
   color: #fff;
+    border-radius: 10px;
   flex: 1 1 calc(33.333% - 2rem); /* Responsive card width with gap adjustment */
   max-width: 500px;
   border: 1px solid #444;
@@ -145,19 +148,19 @@ const Project = () => {
       title: "TechTrooper (React And API)",
       description: "Built a React-based ecommerce site with API integration for seamless functionality and a dynamic user experience. The site includes essential ecommerce functionalities such as product browsing, cart management, secure payment processing, and order tracking.",
       badges: ["JavaScript", "CSS", "React", "API"],
-      link: "https://example.com/techtrooper"
+      link: "https://github.com/elanchandru2/TechTrooper"
     },
     {
       title: "Portfolio",
       description: "My personal portfolio is crafted with HTML, Tailwind CSS, JavaScript, jQuery, and Bootstrap. It features a modern, responsive design with interactive elements like animations and scroll effects. The portfolio includes a contact form and sections detailing my experience, projects, and skills.",
       badges: ["HTML", "Tailwind CSS", "JavaScript", "Bootstrap", "jQuery"],
-      link: "https://example.com/portfolio"
+      link: "https://github.com/elanchandru2/Portfolio"
     },
     {
       title: "Chat Application",
       description: "I developed a chat application using the Chatengine API, providing real-time communication and file transfer. Built with React, the app offers instant messaging and seamless file sharing. Its modern functionality ensures a responsive and engaging user experience.",
       badges: ["React", "Chatengine API", "Real-time Communication", "Tailwind CSS"],
-      link: "https://example.com/chat-application"
+      link: "https://github.com/elanchandru2/Chat-Application"
     },
     {
       title: "Collection of Form Data",
@@ -166,10 +169,10 @@ const Project = () => {
       link: "https://example.com/form-data"
     },
     {
-      title: "Spinning Animation",
-      description: "I developed a spinning animation using CSS for a progressive and innovative spiral loading effect. This animation enhances user experience with a dynamic and visually engaging progress indicator. Its smooth and modern design adapts well to various applications.",
-      badges: ["CSS", "Animation", "UI/UX"],
-      link: "https://example.com/spinning-animation"
+      title: "Appointment Booking System",
+      description: "I developed an appointment booking system using React Native and Firebase, leveraging various React libraries to enhance application functionality and user experience. I possess strong problem-solving skills focused on efficient code and application performance.",
+      badges: ["React-native", "Firebase", "React", "TypeScript"],
+      link: "https://github.com/elanchandru2/Appointment-Booking-System "
     }
   ];
 
