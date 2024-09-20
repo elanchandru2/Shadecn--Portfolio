@@ -247,7 +247,7 @@ const Home = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }} // Faster animation
       >
-        Chandru.
+        Chandru._
       </Intro>
       <Description
         initial={{ opacity: 0, x: -50 }}
